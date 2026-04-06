@@ -1,531 +1,267 @@
 # Delivery-Efficiency-and-CO-Impact-Analysis
-# [Project Title]
-> *One sentence. What did you analyze, build, or solve - and why does it matter?*
-
----
-
-## ⚙️ Project Type Flags
-> *Check what applies. This helps reviewers and collaborators understand the nature of the work at a glance. Delete this block before publishing.*
-
-- [ ] Exploratory Data Analysis (EDA)
-- [ ] SQL Analysis / Querying
-- [ ] Dashboard / Data Visualization
-- [ ] Data Pipeline / ETL
-- [ ] Predictive Modelling / Machine Learning
-- [ ] Data Cleaning / Wrangling
-- [ ] End-to-End (multiple of the above)
-- [ ] Other: ___________
-
----
+# Financial Performance and Forecasting Analysis (2015–2024)
+I analyzed a decade of financial data from Norwegian non-financial companies to evaluate profitability, liquidity, and financial structure across industries—and built predictive models to measure COVID-19 impact and forecast future performance.
 
 ## Table of Contents
 1. [Project Overview](#1-project-overview)
 2. [Objectives](#2-objectives)
-3. [Project Scope & Tools](#3-project-scope--tools)
-4. [Repository Structure](#4-repository-structure)
-5. [Data Workflow](#5-data-workflow)
-6. [Data Model & Schema](#6-data-model--schema)
-7. [ERD - Entity Relationship Diagram](#7-erd--entity-relationship-diagram) *(SQL projects)*
-8. [Analysis & Metrics](#8-analysis--metrics)
-9. [Key Insights](#9-key-insights)
-10. [Recommendations](#10-recommendations)
-11. [Assumptions & Limitations](#11-assumptions--limitations)
-12. [Future Enhancements](#12-future-enhancements)
-13. [Deliverables](#13-deliverables)
-14. [Author](#14-author)
-
----
+3. [Executive Summary](#3-executive-Summary)
+4. [Tools & Technologies](#4-tools--technologies)
+5. [Repository Structure](#5-repository-structure)
+6. [Data Workflow](#6-data-workflow)
+7. [Key Metrics](#7-key-metrics)
+8. [Key Insights](#8-key-insights)
+9. [Recommendations](#9-recommendations)
+10. [Assumptions & Limitations](#10-assumptions--limitations)
+11. [Author](#11-author)
 
 ## 1. Project Overview
 
-<!--
-  Write 3–5 sentences in plain language.
-  Cover: context → problem → approach → outcome.
-  Read it out loud. If it sounds like a form - rewrite it.
-
-  WHAT GOOD LOOKS LIKE:
-  "A mid-size retail business was seeing inconsistent revenue across
-  its regional stores but couldn't identify the root cause. This project
-  explored 18 months of transaction data across five regions to determine
-  whether underperformance was driven by sales volume, pricing, or return
-  rates. The analysis revealed that one region's gap was almost entirely
-  explained by an unusually high return rate on a single product category -
-  a finding invisible in the company's top-level reporting."
-
-  WHAT TO AVOID:
-  "This project analyzes sales data to find trends and insights."
-  (Too vague. Could describe 10,000 projects. Describes none of them.)
--->
-
-**Context:** [The business, research, or personal situation that motivated this project.]
-
-**Problem Statement:** [The specific question or challenge you were addressing.]
-
-**Approach:** [In 1–2 sentences - how did you tackle it?]
-
-**Outcome:** [What did you produce or discover?]
-
----
+Understanding the long-term financial stability of the Norwegian private sector requires looking beyond surface-level financial reports. This project analyses non-financial companies over a 10-year period (2015–2024), covering major economic disruptions including COVID-19 and inflation shocks.
+Norwegian businesses experienced significant volatility due to pandemic disruptions, oil price fluctuations, and rising inflation.
+#### Problem Statement
+Raw financial data alone does not clearly show how economic shocks affected profitability, liquidity, and leverage across industries.
+#### Approach
+I combined profit & loss and balance sheet data from Statistics Norway, transformed it using Power Query, and built interactive dashboards in Power BI. In addition, I developed Python-based forecasting models using pre-COVID data (2015–2019) to estimate expected “no-crisis” performance and compare it with actual outcomes.
+#### Outcome
+- Interactive Power BI dashboard for financial analysis 
+- COVID impact analysis (actual vs expected performance) 
+- Industry-level recovery insights 
+- 5-year financial forecasts (2025–2029) with uncertainty range
 
 ## 2. Objectives
+- Analyze trends in revenue, operating profit, and net profit (2015–2024)
+- Examine changes in assets, equity, and liabilities over time
+- Determine relationship between profitability and financial structure
+- Quantify the impact of COVID-19 (pre, during, post periods)
+- Build a predictive model to estimate no-crisis baseline performance
+- Compare actual vs expected results to measure economic shock impact
+- Forecast key financial indicators for 2025–2029
 
-<!--
-  Write objectives that are specific enough to succeed or fail.
-  Use action-oriented verbs: Identify, Determine, Quantify, Build, Evaluate.
+## 3. Executive Summary
 
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Determine whether customer churn rate correlates with support ticket volume."
-  ✅ "Identify the top three revenue-driving product categories across all regions."
-  ✅ "Build a reproducible pipeline that ingests and cleans daily sales exports."
-
-  WHAT TO AVOID:
-  ❌ "Explore the data."
-  ❌ "Gain insights."
-  ❌ "Understand trends."
-  (These can't fail - which means they can't succeed either.)
--->
-
-- **Primary Objective:** [The main thing you set out to do]
-- **Secondary Objective 1:** [Supporting goal]
-- **Secondary Objective 2:** [Supporting goal]
-- **Secondary Objective 3:** [Remove if not applicable]
-
-> 💡 *Every analysis decision in this project traces back to one of these objectives.*
+<img width="2615" height="1487" alt="1" src="https://github.com/user-attachments/assets/f5028df6-ac35-4b2c-9170-681a2d30508f" />
 
 ---
+The analysis reveals a definitive financial shock during the COVID-19 pandemic, followed by a structurally sound recovery across Norwegian industries. While profitability dipped sharply in covid, the subsequent rebound was driven by operational efficiency rather than simple revenue growth.
+### Key Performance Indicators (2015–2024)
+- **Resilient Profitability**, Net margins improved post-COVID as companies optimized cost structures to combat inflationary pressures.
+- **Strengthened Solvency**, Equity ratios increased while leverage declined, signaling a strategic shift away from debt dependency.
+- **Stable Liquidity**, Effective cash management ensured that liquidity remained stable during the crisis and improved slightly in the recovery phase.
+  
+Norwegian non-financial companies emerged from the pandemic period more financially resilient, characterized by improved profit retention and significantly lower financial risk profiles.
 
-## 3. Project Scope & Tools
 
-### Scope
+## 4. Tools & Technologies
 
-<!--
-  WHAT GOOD LOOKS LIKE:
-  In Scope: "Transaction-level data for Regions A–E, Jan 2023–Jun 2024.
-             Analysis covers revenue, return rates, and product category performance."
-  Out of Scope: "Customer demographics and marketing spend data were excluded -
-                 demographic data was incomplete for two regions, and marketing
-                 data sits in a separate system outside this engagement."
+| Category        | Tools used                              
+| --------------- | ---------------------------------- |
+| Data Storage    | CSV (SSB Statbank)                 |
+| Data Processing | Excel, Power Query                 |
+| Analysis        | Python (linear regression) |
+| Visualization   | Power BI                           |
+| Version Control | GitHub                             |
+| Documentation   | Markdown                           |
 
-  WHAT TO AVOID:
-  ❌ Leaving Out of Scope blank. This is the section that protects your credibility.
-     If you don't define the fence, reviewers assume you missed things.
--->
 
-| Dimension | Details |
-|-----------|---------|
-| **In Scope** | [What is included - data sources, time periods, segments] |
-| **Out of Scope** | [What you explicitly excluded - and a brief reason why] |
-| **Time Period** | [Date range of the data or the project itself] |
-| **Granularity** | [Unit of analysis - row-level, daily aggregates, per-user, etc.] |
-
-### Tools & Technologies
-
-<!--
-  List only what you actually used on this project.
-  This is not your skills section - it's the project's technical context.
--->
-
-| Category | Tool(s) Used |
-|----------|-------------|
-| Data Storage | [e.g., PostgreSQL, CSV files, BigQuery, S3] |
-| Data Processing | [e.g., Python, R, SQL, Excel, dbt] |
-| Analysis | [e.g., pandas, dplyr, custom SQL queries] |
-| Visualization | [e.g., Matplotlib, Tableau, Power BI, Looker] |
-| Version Control | [e.g., Git / GitHub] |
-| Documentation | [e.g., Markdown, Notion] |
-| Other | [Any additional tools] |
-
----
-
-## 4. Repository Structure
+## 5. Repository Structure
 
 ```
-[project-root]/
+financial-performance-analysis/
 │
 ├── data/
-│   ├── raw/                  # Original, unmodified source data - never edited
-│   ├── processed/            # Cleaned and transformed data
-│   └── external/             # Reference data, lookup tables, third-party files
+│   ├── raw/
+│   ├── processed/
 │
-├── notebooks/                # Jupyter, R Markdown, or Colab notebooks
+├── scripts/
+│   ├── global_impact_analysis.py
+│   ├── industrial_impact.py
+│   ├── forecasting.py
 │
-├── scripts/                  # Reusable .py, .R, or .sh processing files
+├── reports/
+│   └── Project Report.pdf
 │
-├── queries/                  # SQL files (retain this folder for SQL-heavy projects)
-│   ├── exploratory/          # Ad-hoc or investigative queries
-│   ├── transformations/      # Cleaning and reshaping logic
-│   └── final/                # Production-ready or presentation queries
+├── visuals/
+│   └── dashboard screenshots/
 │
-├── reports/                  # Final outputs: PDFs, slide decks, Word docs
-│
-├── visuals/                  # Exported charts, dashboard screenshots, ERD diagrams
-│
-├── docs/                     # Data dictionaries, schema notes, reference material
-│
-├── project_metadata.yml      # Machine-readable metadata (optional)
-└── README.md                 # You are here
+├── pbix/
+│   └── Industry Financials Dashboard.pbix
+│   └── Predictive Financial Analysis.pbix
+└── README.md
+
 ```
 
-> ⚠️ *Delete folders you didn't use. An empty folder is worse than no folder.*
-> SQL-heavy projects: keep `queries/`. Analysis-only projects: keep `notebooks/`. Both? Keep both.
 
----
-
-## 5. Data Workflow
-
-<!--
-  Show how data moved through your project - from source to output.
-  Every transformation decision should be traceable here.
-
-  WHAT GOOD LOOKS LIKE:
-  1. Source: "Monthly CSV exports pulled from the internal POS system.
-              Five files, one per region, covering Jan 2023–Jun 2024."
-  2. Ingestion: "Loaded into Python using pandas. Files concatenated into
-                 a single dataframe (approx. 340,000 rows)."
-  3. Cleaning: "Removed 1.2% of rows with null transaction IDs.
-                Standardised date formats across regional files.
-                Resolved product category naming inconsistencies (3 variants → 1)."
-  4. Transformation: "Created a returns_rate field at product-category level.
-                      Aggregated to weekly and regional grain for trend analysis."
-  5. Analysis: "Descriptive statistics, regional comparison, return rate
-                segmentation by product category."
-  6. Output: "Summary report (PDF), annotated notebook, processed CSV."
-
-  WHAT TO AVOID:
-  ❌ "Data was cleaned and analysed." (No chain. No decisions. No trust.)
--->
+## 6. Data Workflow
 
 ```
-[Data Source(s)]
-      ↓
-[Ingestion / Collection Method]
-      ↓
-[Cleaning & Transformation]
-      ↓
-[Analysis / Modelling / Querying]
-      ↓
-[Output / Visualisation / Reporting]
+Source
+Annual financial statement data (2015–2024) for Norwegian non-financial companies sourced from SSB Statbank:
+- Profit & Loss (Table 08120)
+- Balance Sheet (Table 08121)
+        ↓
+Ingestion
+- Data exported from SSB and loaded into Excel  
+- Imported into Power BI via Power Query  
+- Final modeling dataset exported and used in Python (PyCharm)
+        ↓
+Cleaning
+- Removed unnecessary and empty columns in balance sheet dataset  
+- Handled missing values using fill-down techniques  
+- Filtered dataset to relevant period (2015–2024)  
+- Standardized structure across both datasets  
+        ↓
+Transformation
+- Converted wide-format datasets into structured long format  
+  (each row = Year × Industry × Indicator)  
+- Unpivoted financial indicators into attribute–value pairs  
+- Created:
+  - Fact tables: `fact_pnl_long`, `fact_bs_long`  
+  - Dimension tables: `dim_pnl`, `dim_bs`  
+- Built a time table using distinct year values  
+- Added grouped indicator categories using conditional columns  
+        ↓
+Data Integration
+- Merged Profit & Loss and Balance Sheet datasets using:
+  - Keys: Year + Industry  
+- Created a unified Modeling Table for analysis and prediction  
+- Selected key variables:
+  - Revenue, OPEX, Payroll, Depreciation, EBIT, Net Profit  
+  - Total Assets, Equity, Liabilities, Liquidity indicators  
+        ↓
+Analysis & Modeling
+- Power BI:
+  - Built DAX measures for KPIs and period comparisons (Pre, COVID, Post)  
+- Python:
+  - Applied linear regression on pre-COVID data (2015–2019)  
+  - Generated “no-crisis” baseline predictions  
+  - Calculated deviation between actual vs expected values  
+  - Built 5-year forecasts (2025–2029) with uncertainty range  
+        ↓
+Output
+- Interactive Power BI dashboard (financial KPIs & trends)  
+- COVID impact analysis (Actual vs Expected)  
+- Industry-level recovery insights  
+- Forecasting outputs (central, low, high scenarios)  
+- Final PDF report documenting methodology and findings  
+
 ```
 
-1. **Source:** [Where did the data come from? Format, size, access method.]
-2. **Ingestion:** [How was it brought in?]
-3. **Cleaning:** [What issues did you find and fix?]
-4. **Transformation:** [What new fields, aggregations, or structures did you create?]
-5. **Analysis:** [What methods - statistical, visual, query-based, model-based?]
-6. **Output:** [What form do the results take?]
+## 7. Key Metrics
 
----
-
-## 6. Data Model & Schema
-
-<!--
-  Define your fields so that someone reading your analysis can follow along
-  without digging through your code.
-
-  WHAT GOOD LOOKS LIKE (one row example):
-  | transaction_id | string | Unique identifier per sales transaction | TXN-00482 |
-  | return_flag    | boolean | Whether the transaction included a return | TRUE |
-  | region_code    | string | Two-letter identifier for store region | "NE" |
-
-  WHAT TO AVOID:
-  ❌ Skipping this section because "the field names are self-explanatory."
-     They're not. Not to a reviewer. Not to you in six months.
-
-  📌 FOR SQL PROJECTS: If you have multiple tables, create one block per table.
-     Describe join keys and relationships here. Your ERD (Section 7) will
-     visualise what this section describes in text.
-
-  📌 FOR NON-SQL PROJECTS: Describe the shape of your dataset informally
-     if a formal schema doesn't apply. Even one paragraph is more helpful than nothing.
--->
-
-### Dataset / Table: `[name]`
-
-| Field Name | Data Type | Description | Example Value |
-|------------|-----------|-------------|---------------|
-| `[field_1]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_2]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_3]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-
-> **Row count (approx.):** [X rows]
-> **Date range:** [Start] – [End]
-> **Key join / relationship:** [e.g., `orders.customer_id` → `customers.id`]
-
-*Add additional table blocks as needed for multi-table projects.*
-
----
-
-## 7. ERD - Entity Relationship Diagram
-### *(Primarily for SQL Projects - remove this section if not applicable)*
-
-<!--
-  An ERD shows how your tables connect to each other visually.
-  It is the fastest way for a reviewer to understand the data structure
-  of a SQL project without reading every query.
-
-  HOW TO INCLUDE YOUR ERD:
-  Option A - Image embed (most common):
-    Export your ERD from dbdiagram.io, DBeaver, Lucidchart, or similar.
-    Save to /visuals/erd.png and reference it below.
-
-  Option B - dbdiagram.io code block (version-controllable):
-    Paste your schema definition code directly in the fenced block below.
-    Anyone can paste it into dbdiagram.io to regenerate the visual.
-
-  Option C - Mermaid diagram (renders natively in GitHub):
-    Use the mermaid code block syntax below.
-    GitHub will render this as a diagram automatically.
-
-  PICK ONE. Don't use all three. Delete the options you don't use.
--->
-
-### Option A - Embedded Image
-![ERD Diagram](visuals/erd.png)
-*[Brief caption: e.g., "Three-table schema - orders, customers, and products joined on shared IDs."]*
-
----
-
-### Option B - dbdiagram.io Schema Definition
-```
-Table orders {
-  order_id    int     [pk]
-  customer_id int     [ref: > customers.customer_id]
-  product_id  int     [ref: > products.product_id]
-  order_date  date
-  amount      float
-}
-
-Table customers {
-  customer_id int  [pk]
-  region_code string
-  signup_date date
-}
-
-Table products {
-  product_id   int    [pk]
-  category     string
-  unit_price   float
-}
-```
-*Paste this into [dbdiagram.io](https://dbdiagram.io) to view the visual.*
-
----
-
-### Option C - Mermaid Diagram *(renders on GitHub)*
-```mermaid
-erDiagram
-    ORDERS {
-        int order_id PK
-        int customer_id FK
-        int product_id FK
-        date order_date
-        float amount
-    }
-    CUSTOMERS {
-        int customer_id PK
-        string region_code
-        date signup_date
-    }
-    PRODUCTS {
-        int product_id PK
-        string category
-        float unit_price
-    }
-    ORDERS ||--o{ CUSTOMERS : "placed by"
-    ORDERS ||--o{ PRODUCTS : "contains"
-```
-
----
-
-**Table Relationships Summary:**
-
-| Relationship | Join Key | Type |
-|-------------|----------|------|
-| `orders` → `customers` | `customer_id` | Many-to-One |
-| `orders` → `products` | `product_id` | Many-to-One |
-| [Add rows as needed] | | |
-
----
-
-## 8. Analysis & Metrics
-
-<!--
-  Explain what you measured and how - before you share what you found.
-
-  WHAT GOOD LOOKS LIKE:
-  Metric: "Customer Return Rate"
-  Definition: "Number of transactions flagged as returns divided by total
-               transactions, calculated at product-category and regional grain."
-  Why It Matters: "Return rate - not sales volume - was hypothesised to
-                  explain regional revenue gaps. This metric tests that hypothesis."
-
-  WHAT TO AVOID:
-  ❌ Defining a metric only in code: SUM(returns) / COUNT(transaction_id)
-     That's an implementation. Write the plain-language definition here.
-     Both belong in your project - the definition in the README,
-     the implementation in the code.
--->
-
-### Analytical Approach
-
-[Describe how you approached the analysis. Were you exploring patterns? Testing a hypothesis? Building and validating a pipeline? Be honest about your method - exploratory work is valid, just call it that.]
-
-### Key Metrics Defined
-
-| Metric | Plain-Language Definition | Why It Matters |
+| Metric | Definition | Why It Matters |
 |--------|--------------------------|----------------|
-| `[Metric 1]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 2]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 3]` | [What it measures, in one sentence] | [What decision or question it answers] |
+| Net Profit Margin | Net profit as % of revenue | Measures profitability efficiency |
+| Equity Ratio | Equity / Total Assets| Indicates financial stability |
+| Leverage Ratio | Liabilities / Equity | Measures financial risk|
+| Liquidity Ratio | Current assets vs liabilities| Indicates short-term solvency |
+| Deviation % | (Actual - Expected) | Expected	Quantifies crisis impact|
 
 ### Methods Used
+- Time-series trend analysis (2015–2024)
+- Pre vs During vs Post COVID comparison
+- Industry segmentation analysis
+- Linear regression (baseline modeling)
+- Forecasting with uncertainty bands (±15%)
 
-- [e.g., Descriptive statistics - distribution, central tendency, outlier detection]
-- [e.g., Trend analysis across [time period]]
-- [e.g., Segmentation / group comparison by [dimension]]
-- [e.g., Correlation analysis between [variable A] and [variable B]]
-- [e.g., SQL window functions for [specific aggregation]]
-- [e.g., Custom aggregation or transformation logic in [tool]]
+## 8. Key Insights
 
----
+#### **Financial Performance**
+<img width="2689" height="1475" alt="Skjermbilde 2026-02-25 002944" src="https://github.com/user-attachments/assets/9c3ee2fe-72b6-4e0a-91ed-86884110b39f" />
 
-## 9. Key Insights
+**Profit Recovery Driven by Structural Cost Efficiency**
 
-<!--
-  Findings + implications. Not just what happened - what it means.
+**Pattern:** Revenue and operating expenses declined during COVID-19, but in the post-COVID period, profit grew at a faster rate than both, with a visibly widening gap between revenue and costs.
 
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Return rates, not sales volume, explain Region A's underperformance.
-      Region A's return rate on home goods was 34% - more than double the
-      company average. Revenue was not lost at the point of sale; it was
-      lost post-sale through refunds. This points to a fulfilment or
-      product quality issue specific to that region, not a demand problem."
+**Interpretation:** The divergence between revenue and operating expenses indicates that companies improved cost structures during the crisis reducing or optimizing expenses and maintained this efficiency during recovery.
 
-  WHAT TO AVOID:
-  ❌ "Region A had lower revenue than other regions in Q4."
-     (That's an observation. It describes what happened.
-      An insight says what it means and where to look next.)
+**Impact:** Profit growth is being driven by structural efficiency rather than top-line expansion. This suggests more resilient and scalable operations, positioning companies to sustain profitability even under future economic pressure.
 
-  Aim for 3–6 insights. Quality over quantity.
--->
+**Post-COVID Strengthening of Financial Structure**
 
-**Insight 1: [Short descriptive headline]**
-[What you found + what it suggests. One short paragraph.]
+**Pattern:** Assets, liabilities, and equity declined during the COVID-19 period, followed by a strong recovery, with equity growing at a more stable pace relative to liabilities.
 
-**Insight 2: [Short descriptive headline]**
-[What you found + what it suggests.]
+**Interpretation:** During the crisis, companies adjusted balance sheets by limiting growth and preserving capital. In the recovery phase, equity accumulation outpaced reliance on debt, indicating a shift toward stronger internal financing.
 
-**Insight 3: [Short descriptive headline]**
-[What you found + what it suggests.]
-
-**Insight 4 (if applicable): [Short descriptive headline]**
-[What you found + what it suggests.]
+**Impact:** The post-COVID period reflects a structurally stronger financial position, with improved balance sheet resilience and reduced dependence on leverage, lowering overall financial risk.
 
 ---
+#### **COVID-19 Shock and Fast Recovery**
+<img width="2648" height="1492" alt="Skjermbilde 2026-02-25 003228" src="https://github.com/user-attachments/assets/c31d4c87-3d94-4082-9819-90a18f70d993" />
 
-## 10. Recommendations
+**Pattern:** Revenue, EBIT, and Net Profit dropped clearly in 2020, then bounced back quickly and even exceeded pre-COVID levels by 2021–2022.
 
-<!--
-  Action-oriented. Addressed to a real audience.
-  Tied explicitly to the insight that supports each one.
+**Interpretation:** All key metrics falling at the same time shows how widespread the impact was. But the quick rebound suggests companies adapted fast and were supported during the crisis.
 
-  WHAT GOOD LOOKS LIKE:
-  Priority: High
-  Recommendation: "Conduct a fulfilment audit for home goods deliveries
-                   in Region A - specifically investigating whether returns
-                   correlate with a particular warehouse, carrier, or SKU batch."
-  Based On: Insight 1 - return rate anomaly in Region A
-  Owner: Operations / Supply Chain team
+**Impact:** The downturn didn’t last long. Most companies recovered quickly and returned to growth, which points to a strong and resilient business environment.
 
-  WHAT TO AVOID:
-  ❌ "Improve the return rate."
-     (Not actionable. Doesn't say who, how, or where to start.)
-  ❌ "Further analysis is needed."
-     (This is a placeholder, not a recommendation.)
--->
+---
+#### **Financial Stability Varies Significantly Across Industries**
+<img width="2240" height="1275" alt="4" src="https://github.com/user-attachments/assets/f0ad9df4-c262-4b6b-8265-3f58a09e8106" />
+
+**Pattern:** 
+- **Revenue:** Wholesale trade (~17M) and mining (~13M) generate the highest revenues, followed by manufacturing (~8M). However, manufacturing also carries high liabilities relative to its size.
+- **Profitability Efficiency:** Real estate and mining hold the largest asset bases, while sectors such as education and other services operate with low assets, equity, and margins.
+- **Financial Stability:** Real estate achieves the highest net margins and holds strong equity levels (>15M), despite not being the top revenue generator. Smaller or niche categories also show disproportionately high margins.
+
+**Interpretation:**
+- High-revenue industries are often capital-intensive and require significant ongoing investment, leading to higher financial obligations and risk exposure.
+- Profitability is driven more by business model efficiency than by revenue scale. Asset-based sectors like real estate benefit from stable income streams and lower operating costs.
+- Capital-intensive industries build financial buffers through assets, while service-based sectors operate with limited reserves and higher vulnerability to shocks.
+  
+**Impact:**
+- Revenue alone is not a reliable indicator of financial health. High-revenue sectors like manufacturing may face tighter margins and higher risk, requiring closer monitoring of leverage and cost structure.
+- High-margin sectors represent more sustainable values. Investors and decision-makers should prioritize efficiency metrics (e.g., margins, returns) over revenue size when assessing performance.
+- Financial resilience is uneven across industries. Asset-heavy sectors are better positioned to absorb economic shocks, while smaller service sectors may require external support during downturns.
+
+---
+#### **Uneven Industry Recovery Driven by Structural Differences**
+<img width="2659" height="1492" alt="Skjermbilde 2026-02-25 005119" src="https://github.com/user-attachments/assets/08819b5f-3a88-4fe3-9de8-6c031a2cc1e9" />
+
+**Pattern:** While most industries recovered by 2021, recovery speed varied significantly. Real estate, mining, and agriculture exceeded expected performance (+17% to +34%), whereas education (-8.9%), administrative services (-5.6%), and hospitality-related sectors remained below baseline and recovered later (2022–2023).
+
+**Interpretation:** Asset-heavy and capital-driven industries benefited from rising asset values and stable demand, while service-based sectors dependent on physical interaction faced prolonged disruption and slower demand recovery.
+
+**Impact:** Recovery is structurally uneven across industries, indicating that financial resilience depends on sector characteristics. This suggests that risk assessment, investment decisions, and policy support should be industry-specific rather than broadly applied.
+
+---
+#### **Actual Performance vs Forecast**
+<img width="2651" height="1370" alt="Skjermbilde 2026-02-25 003626" src="https://github.com/user-attachments/assets/e8efb729-5600-4d44-a933-62770c25b567" />
+
+**Pattern:** Across most indicators, the actual 2024 values follow the same upward trend as the forecast, but stay slightly below the expected (no-crisis) levels especially for total assets, fixed assets, and equity.
+
+**Interpretation:** The overall direction shows that companies recovered and continued to grow, but not fully at the pace predicted without COVID. The gap suggests that some long-term effects of the crisis are still present, particularly in capital growth.
+
+**Impact:** While the recovery is strong, it is not fully complete. This indicates that businesses are on a solid growth path, but still have some ground to cover to reach their full expected potential.
+
+---
+## 9. Recommendations
 
 | Priority | Recommendation | Based On | Suggested Owner |
 |----------|---------------|----------|-----------------|
-| High | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Medium | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Low | [Exploratory or longer-term suggestion] | [Insight it comes from] | [Who should act] |
+| High | Monitor industries with slow recovery (e.g. education) | Uneven recovery trends | Policy makers |
+| High | Use deviation analysis to identify financial risk sectors | Crisis impact analysis | Banks / Analysts |
+| Medium | Benchmark company performance against industry trends | Industry comparison insights | Business managers |
+| Low | Improve forecasting models with more advanced ML methods | Model limitations | Data teams |
 
----
-
-## 11. Assumptions & Limitations
-
-<!--
-  WHAT GOOD LOOKS LIKE:
-  Assumption: "Transaction records were assumed to be complete for all five regions.
-               No validation was performed against source system record counts."
-  Limitation: "The analysis cannot distinguish between returns initiated by
-               the customer vs. returns initiated by the business (e.g., recalls).
-               If business-initiated returns are concentrated in Region A, the
-               return rate finding may reflect a policy decision, not a quality issue."
-
-  WHAT TO AVOID:
-  ❌ Leaving this section blank or writing "None known."
-     Every project has limitations. Documenting them is a sign of
-     analytical maturity - not a confession of failure.
--->
+## 10. Assumptions & Limitations
 
 ### Assumptions
-- [What did you treat as true without being able to verify?]
-- [What simplifications did you make for scope or feasibility?]
-- [What domain rules or definitions did you accept as given?]
-
+- Pre-COVID period (2015–2019) represents a stable baseline
+- Linear regression adequately captures trend direction
+- Financial ratios reflect real economic performance
+  
 ### Limitations
-- [What gaps exist in the data?]
-- [What analysis was out of scope but could affect interpretation?]
-- [What would a more rigorous version of this project include?]
-- [Are there known biases in the data source or collection method?]
+- Data is at an industry-aggregate level, which may mask individual company successes or failures.
+- The forecasting model does not account for unforeseen "Black Swan" geopolitical events in 2025; it relies strictly on historical trends.
+- Forecasts include uncertainty and are not guaranteed outcomes
+- External factors (policy changes, global markets) not fully included
 
-> *The goal here is pre-emptive Q&A. What would a thoughtful skeptic push back on? Document the answer here, before they ask.*
 
----
+## 11. Author
 
-## 12. Future Enhancements
+**Florence Braut**
+- 🔗 linkedin.com/in/Florence B
+- 💼 Portfolio:https://hef-b.github.io/
+- 📧 dainsights@proton.me
 
-<!--
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Automate the monthly data pull from the POS export folder using
-      a scheduled Python script, replacing the current manual process."
-  ✅ "Expand the return rate analysis to include carrier-level data,
-      which was unavailable in this dataset but exists in the logistics system."
-
-  WHAT TO AVOID:
-  ❌ "Add a machine learning model."
-     (Vague, and disconnected from the actual findings of this project.)
-  ❌ Listing aspirational features that don't follow logically from the work.
--->
-
-- [ ] [Enhancement 1 - specific and traceable to a real gap in this project]
-- [ ] [Enhancement 2]
-- [ ] [Enhancement 3]
-- [ ] [Enhancement 4]
-
----
-
-## 13. Deliverables
-
-| Deliverable | Description | Location |
-|-------------|-------------|----------|
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
-
----
-
-## 14. Author
-
-**[Your Name]**
-[Your role or title - current or target]
-
-- 🔗 [LinkedIn URL]
-- 💼 [Portfolio or GitHub profile URL]
-- 📧 [Email - optional]
-
----
-
-*Last updated: [Month YYYY]*
-*If this template helped you, consider starring the repository.*
