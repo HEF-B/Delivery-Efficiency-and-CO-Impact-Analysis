@@ -30,8 +30,6 @@ The final output is a multi-page Power BI dashboard designed to help operations 
 ## 3. Executive Summary
 <img width="2621" height="1482" alt="1" src="https://github.com/user-attachments/assets/9da64933-0ffd-4509-85d2-e2c72d8b0019" />
 
-<img width="2250" height="1255" alt="1" src="https://github.com/user-attachments/assets/292a16c7-88b5-4963-8376-e008a9422c9f" />
-
 - The data provides a high-level view of employee satisfaction, engagement, and burnout risk across departments and Nordic countries. Overall engagement is stable (3.1), with a relatively low but meaningful burnout rate of 19.2%, indicating that while most employees are doing well, there is a notable at-risk group that requires attention.
   
 - Burnout risk is not evenly distributed. While 80.8% of employees fall into the low-risk category, a smaller segment (approximately 4%) is classified as high-risk, which can have a disproportionate impact on productivity and retention if not addressed early.
