@@ -1,6 +1,5 @@
 # Delivery-Efficiency-and-CO-Impact-Analysis
-# Employee Satisfaction & Workplace Analysis.
-Analyzed HR survey data to identify key drivers of employee satisfaction, burnout risk and workplace fairness across Nordic countries, and built an interactive Power BI dashboard to support data-driven HR decision-making.
+Analyzed logistics operations to identify opportunities to improve delivery reliability, reduce CO₂ emissions, and optimize cost efficiency through Power BI dashboard.
 
 ## Table of Contents
 1. [Project Overview](#1-project-overview)
@@ -16,11 +15,11 @@ Analyzed HR survey data to identify key drivers of employee satisfaction, burnou
 11. [Author](#11-author)
 
 ## 1. Project Overview
-Organizations often struggle to understand what truly drives employee satisfaction and where risks like burnout or disengagement are emerging. This project explores HR survey data to uncover patterns in employee wellbeing, performance, and career progression across departments and regions.
+Logistics operations often face a trade-off between cost, delivery speed, and environmental impact. This project explores delivery performance data to understand where inefficiencies exist and how they affect both operational reliability and CO₂ emissions.
 
-The dataset was sourced from Kaggle and extended with Nordic country data to create a more realistic and regionally relevant analysis. The focus was on identifying key drivers such as work-life balance, overtime, compensation, and promotion patterns, and understanding how these factors vary across roles and locations.
+The dataset was synthetically generated to simulate real-world logistics scenarios, including shipment volumes, delivery times, vehicle types, weather conditions, and carrier performance. The analysis focuses on identifying key drivers of delays, cost variability, and environmental impact.
 
-The final output is a 4-page interactive Power BI dashboard that enables HR teams to monitor employee experience, detect risk areas early, and make more informed workforce decisions.
+The final output is a multi-page Power BI dashboard designed to help operations teams monitor performance, detect inefficiencies, and make data-driven decisions to improve both service quality and sustainability.
 
 ## 2. Objectives
 - Identify the key drivers of employee satisfaction and burnout risk.
@@ -29,6 +28,7 @@ The final output is a 4-page interactive Power BI dashboard that enables HR team
 - Compare workforce trends across Nordic countries.
 
 ## 3. Executive Summary
+<img width="2621" height="1482" alt="1" src="https://github.com/user-attachments/assets/9da64933-0ffd-4509-85d2-e2c72d8b0019" />
 
 <img width="2250" height="1255" alt="1" src="https://github.com/user-attachments/assets/292a16c7-88b5-4963-8376-e008a9422c9f" />
 
@@ -118,7 +118,7 @@ Output
 ## 8. Key Insights
 
 ### Dashboard 2: Wellbeing & Work Patterns.
-<img width="2247" height="1270" alt="2" src="https://github.com/user-attachments/assets/d9086657-cada-48b7-acb5-3b0f444c3097" />
+<img width="2636" height="1469" alt="2" src="https://github.com/user-attachments/assets/842e0594-06d4-4dfd-a960-4ba47257ecf5" />
 
 - #### Overtime is the clearest early warning signal for burnout
 
@@ -169,7 +169,7 @@ Improving work-life balance (through flexibility, workload management, or policy
 
 ---
 ### **Dashboard 3: Growth, Rewards & Fairness**
-<img width="2220" height="1260" alt="3" src="https://github.com/user-attachments/assets/6a523833-8ed5-4c00-8288-a819bad089be" />
+<img width="2628" height="1473" alt="3" src="https://github.com/user-attachments/assets/6d2b0d2b-643d-44ba-b37d-1d79b9748e21" />
 
 - #### Promotion outcomes are uneven across departments and genders
   - ***Pattern:***
@@ -212,7 +212,7 @@ Employees in these areas may feel they are working more without proportional rec
 This is a high-risk retention zone. Employees in these roles are more likely to disengage or leave if effort is not matched with growth opportunities.
 ---
 ### **Dashboard 4: Detailed Overview**
-<img width="2255" height="1262" alt="4" src="https://github.com/user-attachments/assets/1de72872-1cc3-4ac9-a98b-d3de1244427e" />
+<img width="2645" height="1491" alt="5" src="https://github.com/user-attachments/assets/07a9ddab-2597-4877-9a11-93799a08ec42" />
 
 - #### Employee satisfaction is stable across countries, with only minor variation
   - ***Pattern:***
