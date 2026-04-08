@@ -1,6 +1,6 @@
 # Delivery-Efficiency-and-CO-Impact-Analysis
-# Financial Performance and Forecasting Analysis (2015–2024)
-I analyzed a decade of financial data from Norwegian non-financial companies to evaluate profitability, liquidity, and financial structure across industries—and built predictive models to measure COVID-19 impact and forecast future performance.
+# Employee Satisfaction & Workplace Analysis.
+Analyzed HR survey data to identify key drivers of employee satisfaction, burnout risk and workplace fairness across Nordic countries, and built an interactive Power BI dashboard to support data-driven HR decision-making.
 
 ## Table of Contents
 1. [Project Overview](#1-project-overview)
@@ -16,247 +16,287 @@ I analyzed a decade of financial data from Norwegian non-financial companies to 
 11. [Author](#11-author)
 
 ## 1. Project Overview
+Organizations often struggle to understand what truly drives employee satisfaction and where risks like burnout or disengagement are emerging. This project explores HR survey data to uncover patterns in employee wellbeing, performance, and career progression across departments and regions.
 
-Understanding the long-term financial stability of the Norwegian private sector requires looking beyond surface-level financial reports. This project analyses non-financial companies over a 10-year period (2015–2024), covering major economic disruptions including COVID-19 and inflation shocks.
-Norwegian businesses experienced significant volatility due to pandemic disruptions, oil price fluctuations, and rising inflation.
-#### Problem Statement
-Raw financial data alone does not clearly show how economic shocks affected profitability, liquidity, and leverage across industries.
-#### Approach
-I combined profit & loss and balance sheet data from Statistics Norway, transformed it using Power Query, and built interactive dashboards in Power BI. In addition, I developed Python-based forecasting models using pre-COVID data (2015–2019) to estimate expected “no-crisis” performance and compare it with actual outcomes.
-#### Outcome
-- Interactive Power BI dashboard for financial analysis 
-- COVID impact analysis (actual vs expected performance) 
-- Industry-level recovery insights 
-- 5-year financial forecasts (2025–2029) with uncertainty range
+The dataset was sourced from Kaggle and extended with Nordic country data to create a more realistic and regionally relevant analysis. The focus was on identifying key drivers such as work-life balance, overtime, compensation, and promotion patterns, and understanding how these factors vary across roles and locations.
+
+The final output is a 4-page interactive Power BI dashboard that enables HR teams to monitor employee experience, detect risk areas early, and make more informed workforce decisions.
 
 ## 2. Objectives
-- Analyze trends in revenue, operating profit, and net profit (2015–2024)
-- Examine changes in assets, equity, and liabilities over time
-- Determine relationship between profitability and financial structure
-- Quantify the impact of COVID-19 (pre, during, post periods)
-- Build a predictive model to estimate no-crisis baseline performance
-- Compare actual vs expected results to measure economic shock impact
-- Forecast key financial indicators for 2025–2029
+- Identify the key drivers of employee satisfaction and burnout risk.
+- Analyze the impact of overtime on work-life and employee wellbeing.
+- Evaluate promotion patterns and fairness across departments and genders.
+- Compare workforce trends across Nordic countries.
 
 ## 3. Executive Summary
 
-<img width="2615" height="1487" alt="1" src="https://github.com/user-attachments/assets/f5028df6-ac35-4b2c-9170-681a2d30508f" />
+<img width="2250" height="1255" alt="1" src="https://github.com/user-attachments/assets/292a16c7-88b5-4963-8376-e008a9422c9f" />
 
----
-The analysis reveals a definitive financial shock during the COVID-19 pandemic, followed by a structurally sound recovery across Norwegian industries. While profitability dipped sharply in covid, the subsequent rebound was driven by operational efficiency rather than simple revenue growth.
-### Key Performance Indicators (2015–2024)
-- **Resilient Profitability**, Net margins improved post-COVID as companies optimized cost structures to combat inflationary pressures.
-- **Strengthened Solvency**, Equity ratios increased while leverage declined, signaling a strategic shift away from debt dependency.
-- **Stable Liquidity**, Effective cash management ensured that liquidity remained stable during the crisis and improved slightly in the recovery phase.
+- The data provides a high-level view of employee satisfaction, engagement, and burnout risk across departments and Nordic countries. Overall engagement is stable (3.1), with a relatively low but meaningful burnout rate of 19.2%, indicating that while most employees are doing well, there is a notable at-risk group that requires attention.
   
-Norwegian non-financial companies emerged from the pandemic period more financially resilient, characterized by improved profit retention and significantly lower financial risk profiles.
+- Burnout risk is not evenly distributed. While 80.8% of employees fall into the low-risk category, a smaller segment (approximately 4%) is classified as high-risk, which can have a disproportionate impact on productivity and retention if not addressed early.
+  
+- Department-level analysis shows that engagement scores are relatively consistent across teams, but headcount differences highlight where HR efforts may have the greatest impact.
+  
+- On Country level comparisons reveal slight variations in burnout risk, suggesting that local workplace conditions may influence employee wellbeing.
+
+Overall, the dashboard enables HR teams to quickly identify risk areas, compare regions, and take proactive action to improve employee experience.
+
 
 
 ## 4. Tools & Technologies
 
-| Category        | Tools used                              
+| Category        | Tools Used                       |
 | --------------- | ---------------------------------- |
-| Data Storage    | CSV (SSB Statbank)                 |
-| Data Processing | Excel, Power Query                 |
-| Analysis        | Python (linear regression) |
+| Data Storage    | CSV files (Kaggle dataset)         |
+| Data Processing | Power BI (Power Query)             |
+| Analysis        | Power BI (DAX) |
 | Visualization   | Power BI                           |
-| Version Control | GitHub                             |
+| Version Control | Git / GitHub                       |
 | Documentation   | Markdown                           |
 
 
 ## 5. Repository Structure
 
 ```
-financial-performance-analysis/
+Employee Satisfaction & Workplace Analysis/
 │
 ├── data/
 │   ├── raw/
 │   ├── processed/
-│
-├── scripts/
-│   ├── global_impact_analysis.py
-│   ├── industrial_impact.py
-│   ├── forecasting.py
-│
-├── reports/
-│   └── Project Report.pdf
 │
 ├── visuals/
 │   └── dashboard screenshots/
 │
 ├── pbix/
 │   └── Industry Financials Dashboard.pbix
-│   └── Predictive Financial Analysis.pbix
+│   
 └── README.md
 
 ```
-
 
 ## 6. Data Workflow
 
 ```
 Source
-Annual financial statement data (2015–2024) for Norwegian non-financial companies sourced from SSB Statbank:
-- Profit & Loss (Table 08120)
-- Balance Sheet (Table 08121)
+- HR employee dataset from Kaggle, extended with Nordic country data.
         ↓
 Ingestion
-- Data exported from SSB and loaded into Excel  
-- Imported into Power BI via Power Query  
-- Final modeling dataset exported and used in Python (PyCharm)
+- Imported into Power BI using Power Query.
         ↓
 Cleaning
-- Removed unnecessary and empty columns in balance sheet dataset  
-- Handled missing values using fill-down techniques  
-- Filtered dataset to relevant period (2015–2024)  
-- Standardized structure across both datasets  
+- Handled missing values
+- Standardized categorical variables
+- Ensured consistency across added country data
         ↓
 Transformation
-- Converted wide-format datasets into structured long format  
-  (each row = Year × Industry × Indicator)  
-- Unpivoted financial indicators into attribute–value pairs  
-- Created:
-  - Fact tables: `fact_pnl_long`, `fact_bs_long`  
-  - Dimension tables: `dim_pnl`, `dim_bs`  
-- Built a time table using distinct year values  
-- Added grouped indicator categories using conditional columns  
+- Created calculated metrics (burnout categories, engagement index)
+- Grouped variables (training hours, salary ranges)
+- Structured data for multi-dimensional analysis 
         ↓
-Data Integration
-- Merged Profit & Loss and Balance Sheet datasets using:
-  - Keys: Year + Industry  
-- Created a unified Modeling Table for analysis and prediction  
-- Selected key variables:
-  - Revenue, OPEX, Payroll, Depreciation, EBIT, Net Profit  
-  - Total Assets, Equity, Liabilities, Liquidity indicators  
-        ↓
-Analysis & Modeling
-- Power BI:
-  - Built DAX measures for KPIs and period comparisons (Pre, COVID, Post)  
-- Python:
-  - Applied linear regression on pre-COVID data (2015–2019)  
-  - Generated “no-crisis” baseline predictions  
-  - Calculated deviation between actual vs expected values  
-  - Built 5-year forecasts (2025–2029) with uncertainty range  
+Analysis 
+- Trend and segmentation analysis
+- Department, role, and country comparisons
+- Behavioral analysis (overtime vs burnout)  
         ↓
 Output
-- Interactive Power BI dashboard (financial KPIs & trends)  
-- COVID impact analysis (Actual vs Expected)  
-- Industry-level recovery insights  
-- Forecasting outputs (central, low, high scenarios)  
-- Final PDF report documenting methodology and findings  
+- Interactive Power BI dashboard (Multi-pages)  
 
 ```
 
 ## 7. Key Metrics
 
-| Metric | Definition | Why It Matters |
-|--------|--------------------------|----------------|
-| Net Profit Margin | Net profit as % of revenue | Measures profitability efficiency |
-| Equity Ratio | Equity / Total Assets| Indicates financial stability |
-| Leverage Ratio | Liabilities / Equity | Measures financial risk|
-| Liquidity Ratio | Current assets vs liabilities| Indicates short-term solvency |
-| Deviation % | (Actual - Expected) | Expected	Quantifies crisis impact|
+| Metric                  | Definition                           | Why It Matters                             |
+| ----------------------- | ------------------------------------ | ------------------------------------------ |
+| Engagement Index        | Average employee engagement score    | Measures overall workforce sentiment       |
+| Burnout Rate            | % of employees in high-risk category | Identifies retention and performance risks |
+| Overtime Hours          | Average extra working hours          | Key driver of burnout                      |
+| Promotion Rate          | % of employees promoted              | Indicates career growth and fairness       |
+| Work-Life Balance Score | Employee rating of balance           | Strong predictor of satisfaction           |
 
-### Methods Used
-- Time-series trend analysis (2015–2024)
-- Pre vs During vs Post COVID comparison
-- Industry segmentation analysis
-- Linear regression (baseline modeling)
-- Forecasting with uncertainty bands (±15%)
 
 ## 8. Key Insights
 
-#### **Financial Performance**
-<img width="2689" height="1475" alt="Skjermbilde 2026-02-25 002944" src="https://github.com/user-attachments/assets/9c3ee2fe-72b6-4e0a-91ed-86884110b39f" />
+### Dashboard 2: Wellbeing & Work Patterns.
+<img width="2247" height="1270" alt="2" src="https://github.com/user-attachments/assets/d9086657-cada-48b7-acb5-3b0f444c3097" />
 
-**Profit Recovery Driven by Structural Cost Efficiency**
+- #### Overtime is the clearest early warning signal for burnout
 
-**Pattern:** Revenue and operating expenses declined during COVID-19, but in the post-COVID period, profit grew at a faster rate than both, with a visibly widening gap between revenue and costs.
+  - ***Pattern:***
+Employees working higher overtime hours consistently show lower work-life balance scores, and a higher proportion of burnout risk (more high-risk cases appear as overtime increases).
 
-**Interpretation:** The divergence between revenue and operating expenses indicates that companies improved cost structures during the crisis reducing or optimizing expenses and maintained this efficiency during recovery.
+  - ***Interpretation:***
+This suggests burnout is not random, it is strongly linked to workload pressure. Employees are not necessarily disengaged; they are overextended.
 
-**Impact:** Profit growth is being driven by structural efficiency rather than top-line expansion. This suggests more resilient and scalable operations, positioning companies to sustain profitability even under future economic pressure.
-
-**Post-COVID Strengthening of Financial Structure**
-
-**Pattern:** Assets, liabilities, and equity declined during the COVID-19 period, followed by a strong recovery, with equity growing at a more stable pace relative to liabilities.
-
-**Interpretation:** During the crisis, companies adjusted balance sheets by limiting growth and preserving capital. In the recovery phase, equity accumulation outpaced reliance on debt, indicating a shift toward stronger internal financing.
-
-**Impact:** The post-COVID period reflects a structurally stronger financial position, with improved balance sheet resilience and reduced dependence on leverage, lowering overall financial risk.
+  - ***Impact:***
+Overtime becomes a leading indicator HR can monitor proactively. Managing workload and overtime is likely the fastest way to reduce burnout risk before it escalates into turnover.
 
 ---
-#### **COVID-19 Shock and Fast Recovery**
-<img width="2648" height="1492" alt="Skjermbilde 2026-02-25 003228" src="https://github.com/user-attachments/assets/c31d4c87-3d94-4082-9819-90a18f70d993" />
+- #### Burnout risk is concentrated in specific roles, not evenly distributed
 
-**Pattern:** Revenue, EBIT, and Net Profit dropped clearly in 2020, then bounced back quickly and even exceeded pre-COVID levels by 2021–2022.
+   - ***Pattern:***
+The heatmap shows higher burnout values clustered in roles like Software Engineers, Sales Executives, and certain IT-related positions, while others remain consistently low.
 
-**Interpretation:** All key metrics falling at the same time shows how widespread the impact was. But the quick rebound suggests companies adapted fast and were supported during the crisis.
+   - ***Interpretation:***
+Burnout is role-driven rather than organization-wide. Some roles naturally carry higher pressure, expectations, or workload intensity.
 
-**Impact:** The downturn didn’t last long. Most companies recovered quickly and returned to growth, which points to a strong and resilient business environment.
-
----
-#### **Financial Stability Varies Significantly Across Industries**
-<img width="2240" height="1275" alt="4" src="https://github.com/user-attachments/assets/f0ad9df4-c262-4b6b-8265-3f58a09e8106" />
-
-**Pattern:** 
-- **Revenue:** Wholesale trade (~17M) and mining (~13M) generate the highest revenues, followed by manufacturing (~8M). However, manufacturing also carries high liabilities relative to its size.
-- **Profitability Efficiency:** Real estate and mining hold the largest asset bases, while sectors such as education and other services operate with low assets, equity, and margins.
-- **Financial Stability:** Real estate achieves the highest net margins and holds strong equity levels (>15M), despite not being the top revenue generator. Smaller or niche categories also show disproportionately high margins.
-
-**Interpretation:**
-- High-revenue industries are often capital-intensive and require significant ongoing investment, leading to higher financial obligations and risk exposure.
-- Profitability is driven more by business model efficiency than by revenue scale. Asset-based sectors like real estate benefit from stable income streams and lower operating costs.
-- Capital-intensive industries build financial buffers through assets, while service-based sectors operate with limited reserves and higher vulnerability to shocks.
-  
-**Impact:**
-- Revenue alone is not a reliable indicator of financial health. High-revenue sectors like manufacturing may face tighter margins and higher risk, requiring closer monitoring of leverage and cost structure.
-- High-margin sectors represent more sustainable values. Investors and decision-makers should prioritize efficiency metrics (e.g., margins, returns) over revenue size when assessing performance.
-- Financial resilience is uneven across industries. Asset-heavy sectors are better positioned to absorb economic shocks, while smaller service sectors may require external support during downturns.
+   - ***Impact:***
+A one-size-fits-all wellbeing strategy will not work. HR should focus targeted interventions on high-risk roles, rather than applying broad policies across all employees.
 
 ---
-#### **Uneven Industry Recovery Driven by Structural Differences**
-<img width="2659" height="1492" alt="Skjermbilde 2026-02-25 005119" src="https://github.com/user-attachments/assets/08819b5f-3a88-4fe3-9de8-6c031a2cc1e9" />
+- #### Moderate overtime is common, extreme cases are the real risk
 
-**Pattern:** While most industries recovered by 2021, recovery speed varied significantly. Real estate, mining, and agriculture exceeded expected performance (+17% to +34%), whereas education (-8.9%), administrative services (-5.6%), and hospitality-related sectors remained below baseline and recovered later (2022–2023).
+   - ***Pattern:***
+Most employees fall within a moderate overtime range (around 2–4 hours), with relatively fewer employees at extreme levels.
 
-**Interpretation:** Asset-heavy and capital-driven industries benefited from rising asset values and stable demand, while service-based sectors dependent on physical interaction faced prolonged disruption and slower demand recovery.
+  - ***Interpretation:***
+The organization’s overall workload looks manageable at a high level, but outliers (employees with very high overtime) are driving burnout risk.
 
-**Impact:** Recovery is structurally uneven across industries, indicating that financial resilience depends on sector characteristics. This suggests that risk assessment, investment decisions, and policy support should be industry-specific rather than broadly applied.
-
----
-#### **Actual Performance vs Forecast**
-<img width="2651" height="1370" alt="Skjermbilde 2026-02-25 003626" src="https://github.com/user-attachments/assets/e8efb729-5600-4d44-a933-62770c25b567" />
-
-**Pattern:** Across most indicators, the actual 2024 values follow the same upward trend as the forecast, but stay slightly below the expected (no-crisis) levels especially for total assets, fixed assets, and equity.
-
-**Interpretation:** The overall direction shows that companies recovered and continued to grow, but not fully at the pace predicted without COVID. The gap suggests that some long-term effects of the crisis are still present, particularly in capital growth.
-
-**Impact:** While the recovery is strong, it is not fully complete. This indicates that businesses are on a solid growth path, but still have some ground to cover to reach their full expected potential.
+   - ***Impact:***
+Instead of reducing overtime across the board, HR should identify and act on extreme cases, where intervention will have the highest impact.
 
 ---
+- #### Work-life balance is the strongest differentiator between low and high burnout groups
+
+   - ***Pattern:***
+Employees with high work-life balance scores are mostly in the low burnout category, while those with lower scores appear more frequently in medium and high-risk groups.
+
+   - ***Interpretation:***
+Work-life balance is not just a “nice-to-have” metric, it directly reflects employee wellbeing and risk exposure.
+
+   - ***Impact:***
+Improving work-life balance (through flexibility, workload management, or policy changes) is likely to have a direct and measurable effect on reducing burnout.
+
+---
+### **Dashboard 3: Growth, Rewards & Fairness**
+<img width="2220" height="1260" alt="3" src="https://github.com/user-attachments/assets/6a523833-8ed5-4c00-8288-a819bad089be" />
+
+- #### Promotion outcomes are uneven across departments and genders
+  - ***Pattern:***
+Promotion rates vary significantly by department, with noticeable differences between male and female employees in several areas (e.g., IT, Engineering, Operations).
+
+  - ***Interpretation:***
+Career progression is not consistent across the organization. These differences may reflect structural imbalances, role pipelines, or potential bias in promotion practices.
+
+  - ***Impact:***
+This introduces a fairness risk. If left unaddressed, it can reduce trust, lower motivation, and impact retention especially among underrepresented groups.
+________________________________________
+- #### Training does not consistently turn into promotions
+  - ***Pattern:***
+Employees with zero training hours show relatively high promotion percentages, while increased training hours do not clearly lead to higher promotion rates.
+
+  - ***Interpretation:***
+Training programs may not be aligned with promotion criteria, or promotions may depend more on experience, visibility, or role demand than formal development.
+
+  - ***Impact:***
+This creates a disconnect between effort and reward. HR should reassess whether training is effectively supporting career progression or simply acting as a formality.
+________________________________________
+- #### Compensation increases with level but variability suggests inconsistencies
+  - ***Pattern:***
+Salary ranges generally rise with job level, but there is noticeable spread (min–max range) within each level.
+
+  - ***Interpretation:***
+While the pay structure appears tiered, the wide variation within levels may indicate inconsistent compensation practices or negotiation-based differences.
+
+  - ***Impact:***
+This can lead to perceived inequity, even if the overall structure is sound. Transparency and clearer salary bands may help reduce this risk.
+________________________________________
+- #### Some departments combine high workload risk with unclear reward signals
+  - ***Pattern:***
+When combined with earlier findings (burnout + promotions), certain departments show both higher workload pressure and inconsistent promotion outcomes.
+
+  - ***Interpretation:***
+Employees in these areas may feel they are working more without proportional recognition or advancement.
+
+  - ***Impact:***
+This is a high-risk retention zone. Employees in these roles are more likely to disengage or leave if effort is not matched with growth opportunities.
+---
+### **Dashboard 4: Detailed Overview**
+<img width="2255" height="1262" alt="4" src="https://github.com/user-attachments/assets/1de72872-1cc3-4ac9-a98b-d3de1244427e" />
+
+- #### Employee satisfaction is stable across countries, with only minor variation
+  - ***Pattern:***
+Average rating scores across Norway, Sweden, Denmark, and Finland are very close (~3.05–3.12), with similar distribution patterns.
+
+  - ***Interpretation:***
+Employee experience is relatively consistent across regions, suggesting that company-wide policies and culture are broadly aligned.
+
+  - ***Impact:***
+Major interventions do not need to be country specific. HR can focus on role  and workload-based improvements rather than geographic differences.
+________________________________________
+- #### Work-life balance and job satisfaction are strong, but not exceptional
+  - ***Pattern:***
+Most responses fall into “Neutral” and “Good” categories, with fewer “Very Good” ratings.
+
+  - ***Interpretation:***
+Employees are generally satisfied, but not highly engaged or delighted. There is room to improve from “acceptable” to “excellent.”
+
+  - ***Impact:***
+This represents an opportunity zone, not a crisis. Small improvements could significantly boost overall engagement.
+________________________________________
+- #### Performance ratings are high, but may lack differentiation
+  - ***Pattern:***
+A large majority of employees are rated positively in performance (strong skew toward high ratings).
+
+  - ***Interpretation:***
+Performance evaluations may be inflated or not sufficiently differentiated between employees.
+
+  - ***Impact:***
+This reduces the effectiveness of performance as a tool for:
+       - Promotions 
+       - ompensation decisions 
+       - Talent identification 
+________________________________________
+- #### Workforce distribution is concentrated in key departments and countries
+  - ***Pattern:***
+Norway has the largest workforce and payroll, with Engineering and IT having the highest headcounts.
+
+  - ***Interpretation:***
+Business operations are heavily dependent on a few core regions and technical departments.
+
+  - ***Impact:***
+This creates concentration risk  any issues in these areas (burnout, turnover) will have a disproportionate business impact.
+________________________________________
+- #### Workforce demographics show a mid-career heavy population
+  - ***Pattern:***
+Age distribution is centred around mid-30s to early 40s.
+  - ***Interpretation:***
+The workforce is experienced but may soon face:
+       - Career plateau risks 
+       - Increased demand for growth opportunities 
+  - ***Impact:***
+HR should focus on:
+      - Career progression pathways 
+      - Leadership development 
+      - Retention strategies for experienced talent 
+
+---
+
 ## 9. Recommendations
 
-| Priority | Recommendation | Based On | Suggested Owner |
-|----------|---------------|----------|-----------------|
-| High | Monitor industries with slow recovery (e.g. education) | Uneven recovery trends | Policy makers |
-| High | Use deviation analysis to identify financial risk sectors | Crisis impact analysis | Banks / Analysts |
-| Medium | Benchmark company performance against industry trends | Industry comparison insights | Business managers |
-| Low | Improve forecasting models with more advanced ML methods | Model limitations | Data teams |
+| Priority | Recommendation                                                      | Based On                                                           | Suggested Owner      |
+| -------- | ------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------------- |
+| High     | Reduce excessive overtime across teams to prevent burnout           | *“Overtime Impact on Work-Life Balance & Burnout Risk”*            | HR / Team Leads      |
+| High     | Identify and support employees in high burnout risk category (~4%)  | *“Burnout Risk Distribution”*                                      | HR                   |
+| High     | Focus burnout prevention efforts on IT and Engineering roles        | *“Burnout Hotspots by Department and Role”*                        | HR / Tech Leadership |
+| Medium   | Review promotion fairness across departments and genders            | *“Promotions & Promoted Last Year (%) by Department and Gender”*   | HR                   |
+| Medium   | Align training programs with promotion outcomes                     | *“Promoted Last Year (%) by Training Hours”*                       | HR                   |
+| Medium   | Monitor salary ranges to ensure fair compensation across job levels | *“Monthly Income Distribution by Job Level”*                       | HR / Finance         |
+| Low      | Track regional differences in burnout and satisfaction trends       | *“Burnout Risk by Country”* & *“Rating Distribution by Countries”* | HR                   |
+
 
 ## 10. Assumptions & Limitations
 
 ### Assumptions
-- Pre-COVID period (2015–2019) represents a stable baseline
-- Linear regression adequately captures trend direction
-- Financial ratios reflect real economic performance
+- Survey responses accurately reflect employee sentiment.
+- Added Nordic data represents realistic distributions.
+- Engagement and burnout scores are consistently measured.
   
 ### Limitations
-- Data is at an industry-aggregate level, which may mask individual company successes or failures.
-- The forecasting model does not account for unforeseen "Black Swan" geopolitical events in 2025; it relies strictly on historical trends.
-- Forecasts include uncertainty and are not guaranteed outcomes
+- Synthetic/modified dataset may not reflect real company behavior.
+- No time-series data .
+- Cannot establish causation, only correlation.
 - External factors (policy changes, global markets) not fully included
-
 
 ## 11. Author
 
@@ -264,4 +304,3 @@ Output
 - 🔗 linkedin.com/in/Florence B
 - 💼 Portfolio:https://hef-b.github.io/
 - 📧 dainsights@proton.me
-
