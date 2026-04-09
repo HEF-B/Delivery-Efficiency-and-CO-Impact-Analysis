@@ -59,17 +59,20 @@ Overall, the dashboard enables HR teams to quickly identify risk areas, compare 
 ## 5. Repository Structure
 
 ```
-Employee Satisfaction & Workplace Analysis/
+Delivery Efficiency and CO2 Impact Analysis/
 │
-├── data/
-│   ├── raw/
-│   ├── processed/
+├├── data/
+│   └── logistics dataset.csv 
 │
 ├── visuals/
 │   └── dashboard screenshots/
+│           └── executive summary.png
+│           └──operations dashboard.png
+│           └── financial dashboard.png
+│          └── Sustainability & ESG dashboard.png
 │
 ├── pbix/
-│   └── Industry Financials Dashboard.pbix
+│   └── logistics performance Dashboard.pbix
 │   
 └── README.md
 
@@ -78,26 +81,25 @@ Employee Satisfaction & Workplace Analysis/
 ## 6. Data Workflow
 
 ```
-Source
-- HR employee dataset from Kaggle, extended with Nordic country data.
+Data Generation
+- Generated synthetic data representing shipments, routes, vehicle types, delivery times, costs, and external conditions.
         ↓
 Ingestion
 - Imported into Power BI using Power Query.
         ↓
 Cleaning
-- Handled missing values
-- Standardized categorical variables
-- Ensured consistency across added country data
+- Standardized standardized fields
+- Ensured consistency across dimensions
         ↓
 Transformation
-- Created calculated metrics (burnout categories, engagement index)
-- Grouped variables (training hours, salary ranges)
+- Created calculated metrics (On-time delivery rate, CO₂ emissions per shipment)
 - Structured data for multi-dimensional analysis 
         ↓
 Analysis 
+- Built relationships between key entities
 - Trend and segmentation analysis
-- Department, role, and country comparisons
-- Behavioral analysis (overtime vs burnout)  
+- Actual vs Estimated Delivery Gap
+- On-Time Delivery by Vehicle Type (%)  
         ↓
 Output
 - Interactive Power BI dashboard (Multi-pages)  
@@ -108,11 +110,11 @@ Output
 
 | Metric                  | Definition                           | Why It Matters                             |
 | ----------------------- | ------------------------------------ | ------------------------------------------ |
-| Engagement Index        | Average employee engagement score    | Measures overall workforce sentiment       |
-| Burnout Rate            | % of employees in high-risk category | Identifies retention and performance risks |
-| Overtime Hours          | Average extra working hours          | Key driver of burnout                      |
-| Promotion Rate          | % of employees promoted              | Indicates career growth and fairness       |
-| Work-Life Balance Score | Employee rating of balance           | Strong predictor of satisfaction           |
+| On-Time Delivery Rate (%)       | Percentage of shipments delivered within the expected timeframe    | Measures overall service reliability   |
+| CO₂ Emissions (kg)          | Emissions generated per shipment and by vehicle type | Measures environmental impact |
+| Delivery Cost (NOK)         | Total and average cost per shipment.          | Tracks operational efficiency and cost control                     |
+| Average Handling Time (Days)       | Time spent in processing before shipment.            | Used to distinguish internal vs transit delays       |
+| Average Delivery Time (Days) | Average number of days from shipment to delivery.          | Helps identify delays in transit.        |
 
 
 ## 8. Key Insights
@@ -274,15 +276,18 @@ HR should focus on:
 
 ## 9. Recommendations
 
-| Priority | Recommendation                                                      | Based On                                                           | Suggested Owner      |
-| -------- | ------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------------- |
-| High     | Reduce excessive overtime across teams to prevent burnout           | *“Overtime Impact on Work-Life Balance & Burnout Risk”*            | HR / Team Leads      |
-| High     | Identify and support employees in high burnout risk category (~4%)  | *“Burnout Risk Distribution”*                                      | HR                   |
-| High     | Focus burnout prevention efforts on IT and Engineering roles        | *“Burnout Hotspots by Department and Role”*                        | HR / Tech Leadership |
-| Medium   | Review promotion fairness across departments and genders            | *“Promotions & Promoted Last Year (%) by Department and Gender”*   | HR                   |
-| Medium   | Align training programs with promotion outcomes                     | *“Promoted Last Year (%) by Training Hours”*                       | HR                   |
-| Medium   | Monitor salary ranges to ensure fair compensation across job levels | *“Monthly Income Distribution by Job Level”*                       | HR / Finance         |
-| Low      | Track regional differences in burnout and satisfaction trends       | *“Burnout Risk by Country”* & *“Rating Distribution by Countries”* | HR                   |
+| Priority | Recommendation                                                                            | Based On                                                                      | Owner                       |
+| -------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | --------------------------- |
+| High     | Improve transit efficiency by addressing delays during delivery, not handling             | *Actual vs Estimated Delivery Gap*                                          | Operations                  |
+| High     | Reduce reliance on high-cost, high-emission transport (e.g., cargo planes) where feasible | *Average Delivery Cost and CO₂ Emissions by Vehicle Type*                   | Operations / Sustainability |
+| High     | Focus operational improvements on high-risk regions (e.g., Østlandet)                     | *Operational Risk Areas*                                                    | Operations                  |
+| Medium   | Optimize routing and scheduling around peak workload periods                              | *Daily Capacity & Peak Load Analysis*                                       | Operations                  |
+| Medium   | Incorporate weather and traffic conditions into planning and forecasting                  | *Impact of Weather & Traffic on Delivery Timelines*                         | Operations                  |
+| Medium   | Reassess carrier performance and reallocate volume to more efficient providers            | *Carriers by Efficiency Performance* & *High-Cost Carriers per Kilometer* | Procurement                 |
+| Low      | Monitor cost vs performance to eliminate unnecessary spending                             | *Delivery Cost vs Delay Risk*                                               | Finance / Operations        |
+
+
+
 
 
 ## 10. Assumptions & Limitations
