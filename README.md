@@ -32,18 +32,43 @@ The final output is a multi-page Power BI dashboard designed to help operations 
 ## 3. Executive Summary
 <img width="2621" height="1482" alt="1" src="https://github.com/user-attachments/assets/9da64933-0ffd-4509-85d2-e2c72d8b0019" />
 
-- The data provides a high-level view of employee satisfaction, engagement, and burnout risk across departments and Nordic countries. Overall engagement is stable (3.1), with a relatively low but meaningful burnout rate of 19.2%, indicating that while most employees are doing well, there is a notable at-risk group that requires attention.
+### Optimizing Operational Cost, Speed, and Regional Reliability
+
+This analysis evaluates the operational performance of a logistics network handling 5,000 shipments. While delivery speed is relatively fast, with an average of 2 days, the organization faces a significant On-Time Delivery challenge at 67.1%. 
+The data reveals that delivery costs are relatively high, averaging 5.2K NOK per shipment. Largely this driven using Cargo Planes, which is significantly more expensive than other options. In addition, performance issues are not evenly distributed the Østlandet region stands out as a key area where delays and inefficiencies are concentrated.
+
+---
+### Strategic Insights 
+
+ #### 1. The Cost of Speed: Air vs. Ground
+- ***Insight:*** Cargo Planes represent a massive cost at 48K NOK average delivery cost, compared to just 6K NOK for Trucks.
+- ***Interpretation:***  We are paying an 8x premium for air freight. While this supports our 2-day delivery average, the correlation with emissions is nearly linear.
   
-- Burnout risk is not evenly distributed. While 80.8% of employees fall into the low-risk category, a smaller segment (approximately 4%) is classified as high-risk, which can have a disproportionate impact on productivity and retention if not addressed early.
-  
-- Department-level analysis shows that engagement scores are relatively consistent across teams, but headcount differences highlight where HR efforts may have the greatest impact.
-  
-- On Country level comparisons reveal slight variations in burnout risk, suggesting that local workplace conditions may influence employee wellbeing.
+If we can identify which deliveries truly need air transport and shift the rest to ground options, we can reduce costs significantly without affecting service where it matters most.
 
-Overall, the dashboard enables HR teams to quickly identify risk areas, compare regions, and take proactive action to improve employee experience.
+#### 2. Regional Risk: The Østlandet Bottleneck
+- ***Insight:*** Østlandet handles the highest volume of activity in the region (over 1M km travelled) but carries a Poor Efficiency Score of 57, more than 3x any other region with 755 late deliveries.
+- ***Interpretation:*** The region is critical to overall operations, but it is also where most of the problems are happening. Any disruption here affects the whole network.
 
+#### 3. Carrier Efficiency (Funnel)
+- ***Insight:*** Posten and Bring are handling the largest share of volumes (109K and 96K respectively), while smaller specialized carriers like Scandinavian Express remain underutilized.
+- ***Interpretation:*** We are heavily reliant on two major carriers. While this offers scale, it also creates a dependency risk. Exploring the "Efficiency Performance" of our other carriers (DSV, DB Schenker) could provide more cost-effective alternatives for specific regional routes.
 
+#### 4. Volume Stability
+- ***Insight:*** Shipment volume remained steady over time, with no major spikes or drops from January (1,748) through March (1,652).
+- ***Interpretation:*** The consistency in volume suggests that the delivery issues are not caused by peak periods or temporary pressure. They are more likely due to ongoing operational inefficiencies.
+________________________________________
+ ### Recommendations
+#### 1.	Focus on improving performance in Østlandet
+Start by understanding where delays are happening. whether in processing, routing, or last-mile delivery and address those specific issues. 
+#### 2.	Reduce unnecessary use of air transport
+Review which shipments require fast delivery and shift the rest to more cost-effective ground options where possible. Hence improving the 5.2K NOK average cost and lower our carbon footprint.
+#### 3.	Test and expand the use of other carriers
+Gradually allocate some shipments to underused carriers to evaluate whether they can improve delivery performance in certain regions. like Nord-Norge or Trøndelag.
+#### 4.	Align delivery expectations with actual performance
+If deliveries are consistently missing expected timelines, it may be necessary to either improve execution or adjust delivery promises to customers.
 
+---
 ## 4. Tools & Technologies
 
 | Category        | Tools Used                       |
@@ -285,9 +310,6 @@ HR should focus on:
 | Medium   | Incorporate weather and traffic conditions into planning and forecasting                  | *Impact of Weather & Traffic on Delivery Timelines*                         | Operations                  |
 | Medium   | Reassess carrier performance and reallocate volume to more efficient providers            | *Carriers by Efficiency Performance* & *High-Cost Carriers per Kilometer* | Procurement                 |
 | Low      | Monitor cost vs performance to eliminate unnecessary spending                             | *Delivery Cost vs Delay Risk*                                               | Finance / Operations        |
-
-
-
 
 
 ## 10. Assumptions & Limitations
