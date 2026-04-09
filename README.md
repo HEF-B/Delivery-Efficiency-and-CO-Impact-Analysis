@@ -22,10 +22,12 @@ The dataset was synthetically generated to simulate real-world logistics scenari
 The final output is a multi-page Power BI dashboard designed to help operations teams monitor performance, detect inefficiencies, and make data-driven decisions to improve both service quality and sustainability.
 
 ## 2. Objectives
-- Identify the key drivers of employee satisfaction and burnout risk.
-- Analyze the impact of overtime on work-life and employee wellbeing.
-- Evaluate promotion patterns and fairness across departments and genders.
-- Compare workforce trends across Nordic countries.
+- Identify the key operational drivers affecting on-time delivery performance and overall delivery efficiency. 
+- Determine how different vehicle types impact delivery cost, reliability, and CO₂ emissions. 
+- Quantify the impact of external factors (weather and traffic conditions) on delivery delays and route efficiency. 
+- Identify high-risk regions and routes contributing most to delays and poor operational performance. 
+- Evaluate whether higher delivery costs lead to improved delivery performance or indicate inefficiencies. 
+- Analyse carrier performance to identify cost and efficiency differences across logistics providers. 
 
 ## 3. Executive Summary
 <img width="2621" height="1482" alt="1" src="https://github.com/user-attachments/assets/9da64933-0ffd-4509-85d2-e2c72d8b0019" />
@@ -46,12 +48,12 @@ Overall, the dashboard enables HR teams to quickly identify risk areas, compare 
 
 | Category        | Tools Used                       |
 | --------------- | ---------------------------------- |
-| Data Storage    | CSV files (Kaggle dataset)         |
+| Data Storage    | CSV files (synthetic dataset)      |
 | Data Processing | Power BI (Power Query)             |
 | Analysis        | Power BI (DAX) |
 | Visualization   | Power BI                           |
 | Version Control | Git / GitHub                       |
-| Documentation   | Markdown                           |
+| Documentation   | README                           |
 
 
 ## 5. Repository Structure
@@ -286,15 +288,15 @@ HR should focus on:
 ## 10. Assumptions & Limitations
 
 ### Assumptions
-- Survey responses accurately reflect employee sentiment.
-- Added Nordic data represents realistic distributions.
-- Engagement and burnout scores are consistently measured.
+- The dataset was synthetically generated but designed to reflect realistic logistics operations, including delivery volumes, routing patterns, and performance variability. 
+- Cost, vehicle type, and CO₂ emission relationships are modeled to mirror typical industry trade-offs. 
+- Weather and traffic conditions are simplified but structured to represent how external disruptions can impact delivery timelines and efficiency. 
   
 ### Limitations
-- Synthetic/modified dataset may not reflect real company behavior.
-- No time-series data .
-- Cannot establish causation, only correlation.
-- External factors (policy changes, global markets) not fully included
+- Since the data is synthetic, the findings should be interpreted as directional insights rather than exact real world measurements. 
+- The analysis covers a limited time period, so it does not capture long term trends, seasonality, or operational changes over time. 
+- Some real-world factors such as fuel price fluctuations, regulatory constraints, and unexpected disruptions are not included, which may affect cost and performance.
+
 
 ## 11. Author
 
