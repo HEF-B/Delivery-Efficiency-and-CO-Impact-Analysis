@@ -144,56 +144,46 @@ Output
 
 ## 8. Key Insights
 
-### Dashboard 2: Wellbeing & Work Patterns.
+### Operations Performance Report. 
 <img width="2636" height="1469" alt="2" src="https://github.com/user-attachments/assets/842e0594-06d4-4dfd-a960-4ba47257ecf5" />
 
-- #### Overtime is the clearest early warning signal for burnout
-
-  - ***Pattern:***
-Employees working higher overtime hours consistently show lower work-life balance scores, and a higher proportion of burnout risk (more high-risk cases appear as overtime increases).
-
-  - ***Interpretation:***
-This suggests burnout is not random, it is strongly linked to workload pressure. Employees are not necessarily disengaged; they are overextended.
-
-  - ***Impact:***
-Overtime becomes a leading indicator HR can monitor proactively. Managing workload and overtime is likely the fastest way to reduce burnout risk before it escalates into turnover.
+### Root Cause Analysis.
+While our logistics network covers a massive 2M km, we are facing a structural Delivery Gap where actual delivery times consistently exceed estimates. The data identifies Oslo as the primary bottleneck and Cargo Planes as the least reliable mode of transport. 
+If we want to get above 85% on-time delivery, we need to fix the ups and downs we see in the daily capacity heatmap.
 
 ---
-- #### Burnout risk is concentrated in specific roles, not evenly distributed
-
-   - ***Pattern:***
-The heatmap shows higher burnout values clustered in roles like Software Engineers, Sales Executives, and certain IT-related positions, while others remain consistently low.
-
-   - ***Interpretation:***
-Burnout is role-driven rather than organization-wide. Some roles naturally carry higher pressure, expectations, or workload intensity.
-
-   - ***Impact:***
-A one-size-fits-all wellbeing strategy will not work. HR should focus targeted interventions on high-risk roles, rather than applying broad policies across all employees.
-
----
-- #### Moderate overtime is common, extreme cases are the real risk
-
-   - ***Pattern:***
-Most employees fall within a moderate overtime range (around 2–4 hours), with relatively fewer employees at extreme levels.
-
-  - ***Interpretation:***
-The organization’s overall workload looks manageable at a high level, but outliers (employees with very high overtime) are driving burnout risk.
-
-   - ***Impact:***
-Instead of reducing overtime across the board, HR should identify and act on extreme cases, where intervention will have the highest impact.
+### Key Insights.
+#### 1. The "Cargo Plane" Reliability.
+- ***Pattern:*** Despite being the most expensive mode, Cargo Planes have one of the lowest On-Time rates at 57%, significantly lower than Vans and Trucks (67-68%).
+- ***Interpretation:*** We are paying a premium for speed (Air) but receiving the worst reliability. This suggests that ground-level airport handling or air-traffic congestion is negating the speed advantage of flight.
+- ***Impact:*** Relying on Cargo Planes is currently a high-risk, high-cost strategy. Shifting critical shipments back to road-based Express could actually increase reliability while lowering costs.
+#### 2. The Weekend Capacity Collapse
+- ***Pattern:*** The Daily Capacity Heatmap shows consistent Red Zones (Peak Loads) on Mondays, Thursdays, and Sundays, while mid-week remains under-utilized (Green).
+- ***Interpretation:*** Our workload is unevenly distributed. We are likely over-stressing our staff and fleet at the start and end of the week, leading to the 67.1% on-time delivery failure.
+- ***Impact:*** By Leveling the load, we can reduce overtime costs and minimize the human error factor that contributes to the 1.5-day handling delay.
+#### 3. Regional Bottleneck: The "Oslo-Tromsø" Stress Point
+- ***Pattern:*** Oslo is the undisputed bottleneck, originating 543 delay-prone incidents, with the highest individual stress point being the Oslo to Tromsø route (77 score).
+- ***Interpretation:*** Oslo is the heart of the network; when it skips a beat, the entire Norwegian supply chain suffers. The Tromsø route is particularly fragile, likely due to distance combined with weather sensitivity.
+- ***Impact:*** Investing in a secondary sorting hub outside of Oslo or a dedicated Fast-Track lane for Northern routes like Tromsø would de-risk the entire national network.
+#### 4. The Expanding Delivery Gap
+- ***Pattern:*** The gap between Estimated Delivery (ED) and Actual Delivery (AD) is widening, peaking in April (9.0 AD vs 8.0 ED).
+- ***Interpretation:*** Our predictive algorithms are failing to account for real-world friction. We are consistently over-promising to customers.
+- ***Impact:*** This 1-hour "hidden" gap per shipment aggregates into thousands of lost hours across the 2M km traveled, directly causing the dip in on-time delivery and increasing customer service.
 
 ---
-- #### Work-life balance is the strongest differentiator between low and high burnout groups
-
-   - ***Pattern:***
-Employees with high work-life balance scores are mostly in the low burnout category, while those with lower scores appear more frequently in medium and high-risk groups.
-
-   - ***Interpretation:***
-Work-life balance is not just a “nice-to-have” metric, it directly reflects employee wellbeing and risk exposure.
-
-   - ***Impact:***
-Improving work-life balance (through flexibility, workload management, or policy changes) is likely to have a direct and measurable effect on reducing burnout.
-
+### Recommendations
+#### 1. Improve efficiency at the Oslo hub
+  - ***Action:*** Introduce cross-docking in Oslo to reduce the 1.5-day handling time.
+  - ***Target:***	 Reduce Oslo’s bottleneck score from 543 to under 400 within the next quarter.
+#### 2. "Air-to-Van" Shift for Reliability
+  - ***Action:***  Since Vans (68% on-time delivery) outperform Planes (57% on-time delivery), re-route short-haul air freight to high-speed van relays.
+  - ***Target:*** Improve on-time delivery by 5% simply by choosing the more reliable.
+#### 3. Adaptive Scheduling (Peak Smoothing)
+  - ***Action:*** Introduce incentives for customers or partners to ship during "Green Days" (Tuesday/Wednesday) to alleviate the Sunday/Monday red-zone congestion.
+  - ***Target:*** Flatten the capacity heatmap to reduce warehouse fatigue and handling errors.
+#### 4. Recalibrate Estimated Delivery (ED) Models
+  - ***Action:***  Update the April/Spring baseline in the routing software to account for the +1.0 hour variance discovered in the "Actual vs. Estimated" analysis.
+  - ***Target:*** Close the "Expectation Gap" to improve customer satisfaction scores even before the physical logistics are fixed.
 ---
 ### **Dashboard 3: Growth, Rewards & Fairness**
 <img width="2628" height="1473" alt="3" src="https://github.com/user-attachments/assets/6d2b0d2b-643d-44ba-b37d-1d79b9748e21" />
