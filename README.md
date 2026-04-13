@@ -153,22 +153,43 @@ If we want to get above 85% on-time delivery, we need to fix the ups and downs w
 
 ---
 ### Key Insights.
-#### 1. The "Cargo Plane" Reliability.
-- ***Pattern:*** Despite being the most expensive mode, Cargo Planes have one of the lowest On-Time rates at 57%, significantly lower than Vans and Trucks (67-68%).
+
+#### 1.Weather & Traffic Impact
+  - ***Pattern:*** The highest route efficiency score—indicating the most friction—occurs during clear weather with high traffic, reaching a peak of 488.
+At the same time, during snow and storm conditions, the score increases under low traffic conditions, reaching 223 and 141 respectively.
+
+  - ***Interpretation:*** This suggests that performance challenges are not only driven by extreme weather. Even under clear conditions, high traffic is creating significant delays, which points to limitations in how routes are planned or scheduled.
+In harsher weather, the rise in scores—even with low traffic—indicates that environmental conditions alone are enough to disrupt efficiency.
+
+  - ***Impact:*** Delivery performance is being affected by two different pressures: predictable traffic congestion during normal conditions, and reduced operational resilience during severe weather. Addressing both will be important to improve consistency in delivery times.
+
+#### 2. The "Cargo Plane" Reliability.
+  - ***Pattern:*** Despite being the most expensive mode, Cargo Planes have one of the lowest On-Time rates at 57%, significantly lower than Vans and Trucks (67-68%).
+    
 - ***Interpretation:*** We are paying a premium for speed (Air) but receiving the worst reliability. This suggests that ground-level airport handling or air-traffic congestion is negating the speed advantage of flight.
+  
 - ***Impact:*** Relying on Cargo Planes is currently a high-risk, high-cost strategy. Shifting critical shipments back to road-based Express could actually increase reliability while lowering costs.
-#### 2. The Weekend Capacity Collapse
-- ***Pattern:*** The Daily Capacity Heatmap shows consistent Red Zones (Peak Loads) on Mondays, Thursdays, and Sundays, while mid-week remains under-utilized (Green).
+  
+#### 3. The Weekend Capacity Collapse
+  - ***Pattern:*** The Daily Capacity Heatmap shows consistent Red Zones (Peak Loads) on Mondays, Thursdays, and Sundays, while mid-week remains under-utilized (Green).
+    
 - ***Interpretation:*** Our workload is unevenly distributed. We are likely over-stressing our staff and fleet at the start and end of the week, leading to the 67.1% on-time delivery failure.
+  
 - ***Impact:*** By Leveling the load, we can reduce overtime costs and minimize the human error factor that contributes to the 1.5-day handling delay.
-#### 3. Regional Bottleneck: The "Oslo-Tromsø" Stress Point
-- ***Pattern:*** Oslo is the undisputed bottleneck, originating 543 delay-prone incidents, with the highest individual stress point being the Oslo to Tromsø route (77 score).
-- ***Interpretation:*** Oslo is the heart of the network; when it skips a beat, the entire Norwegian supply chain suffers. The Tromsø route is particularly fragile, likely due to distance combined with weather sensitivity.
-- ***Impact:*** Investing in a secondary sorting hub outside of Oslo or a dedicated Fast-Track lane for Northern routes like Tromsø would de-risk the entire national network.
-#### 4. The Expanding Delivery Gap
-- ***Pattern:*** The gap between Estimated Delivery (ED) and Actual Delivery (AD) is widening, peaking in April (9.0 AD vs 8.0 ED).
-- ***Interpretation:*** Our predictive algorithms are failing to account for real-world friction. We are consistently over-promising to customers.
-- ***Impact:*** This 1-hour "hidden" gap per shipment aggregates into thousands of lost hours across the 2M km traveled, directly causing the dip in on-time delivery and increasing customer service.
+
+#### 4. Regional Bottleneck: The "Oslo-Tromsø" Stress Point
+  - ***Pattern:*** Oslo is the undisputed bottleneck, originating 543 delay-prone incidents, with the highest individual stress point being the Oslo to Tromsø route (77 score).
+    
+  - ***Interpretation:*** Oslo is the heart of the network; when it skips a beat, the entire Norwegian supply chain suffers. The Tromsø route is particularly fragile, likely due to distance combined with weather sensitivity.
+    
+  - ***Impact:*** Investing in a secondary sorting hub outside of Oslo or a dedicated Fast-Track lane for Northern routes like Tromsø would de-risk the entire national network.
+  
+#### 5. The Expanding Delivery Gap
+  - ***Pattern:*** The gap between Estimated Delivery (ED) and Actual Delivery (AD) is widening, peaking in April (9.0 AD vs 8.0 ED).
+    
+  - ***Interpretation:*** Our predictive algorithms are failing to account for real-world friction. We are consistently over-promising to customers.
+    
+  - ***Impact:*** This 1-hour "hidden" gap per shipment aggregates into thousands of lost hours across the 2M km traveled, directly causing the dip in on-time delivery and increasing customer service.
 
 ---
 ### Recommendations
@@ -185,10 +206,56 @@ If we want to get above 85% on-time delivery, we need to fix the ups and downs w
   - ***Action:***  Update the April/Spring baseline in the routing software to account for the +1.0 hour variance discovered in the "Actual vs. Estimated" analysis.
   - ***Target:*** Close the "Expectation Gap" to improve customer satisfaction scores even before the physical logistics are fixed.
 ---
-### **Dashboard 3: Growth, Rewards & Fairness**
+### Financial Performance Report.
 <img width="2628" height="1473" alt="3" src="https://github.com/user-attachments/assets/6d2b0d2b-643d-44ba-b37d-1d79b9748e21" />
 
+### Cost Management and Carrier ROI Analysis
+With a total delivery spend of 26M NOK and an average cost per kg of 529, our logistics financial health is stable but vulnerable. A staggering 9M NOK is currently identified as Late Delivery Cost Risk, representing nearly 35% of our total spend. Profitability is being threatened by high-cost corridors in Nord-Norge and significant rate variances among our primary carriers.
 
+---
+### Strategic Insights.
+#### 1. The Geography of Expense: The Northern 
+ - ***Pattern:*** Nord-Norge is our most expensive corridor at 7.7M NOK, significantly outpacing southern regions like Sørlandet (2.4M).
+   
+ - ***Interpretation:*** The higher costs in Northern Norway are largely driven by distance and terrain. This is not only a volume issue, but a structural cost linked to the current routing model.
+   
+ - ***Impact:*** Any operational improvement in the Nord-Norge route offers the highest financial ROI. Even a 5% efficiency gain in the North saves more than a 15% gain in the South.
+
+#### 2. Carrier Rate Variance: The Efficiency Spread
+ - ***Pattern:*** Scandinavian Express and DB Schenker show positive rate variances (0.082 and 0.035), while Posten and DHL Norway are significantly below the benchmark.
+   
+ - ***Interpretation:*** We have a wide disparity in carrier pricing power. We are currently over-paying for certain specialized carriers while seeing high efficiency from our volume leaders like Posten.
+
+ - ***Impact:*** There is a clear opportunity for Rate Harmonization. By migrating volume from high-variance carriers to those with negative variances (like Posten/DHL), we can lower the total 26M spend without sacrificing service.
+
+#### 3. The "Clear Weather" Spend Trap
+ - ***Pattern:*** Over 15.7M NOK (roughly 60% of spend) occurs during Clear Weather, but surprisingly, this is where "Medium" and "High" cost traffic conditions are most concentrated.
+   
+ - ***Interpretation:*** We are losing money during "good" conditions due to traffic congestion and poor route planning, not just "bad" weather.
+
+ - ***Impact:*** This proves our financial leakage is process-driven, not weather-driven. Improving traffic-aware routing during peak clear-weather windows could recover a significant portion of the 9M NOK risk.
+
+#### 4. Fuel Cost Concentration
+- ***Pattern:*** Trucks consume 61% of the fuel cost budget, while Cargo Planes consume 30.4%.
+
+ - ***Interpretation:*** Our financial exposure to fuel price volatility is concentrated in road and air.
+
+ - ***Impact:*** Small fluctuations in global oil prices will hit 91.4% of our logistics spend. Accelerating the transition to EVs for the "Van" segment (only 1.3% of current fuel spend) offers a hedge against this volatility.
+
+---
+### Recommendations
+#### 1. Risk Mitigation (The 9M NOK Recovery)
+   - ***Action:***  Target the 9M NOK Late Delivery Cost Risk by prioritizing shipments on the "Delivery Cost vs. Delay Risk" scatter plot—specifically those high-cost deliveries that are currently falling into the "10+ days late" category.
+   - ***Target:*** Convert 20% of "Risk" into "On-Time" to protect ~1.8M NOK in potential penalties or churn costs.
+#### 2. Carrier Portfolio Rebalancing
+   - ***Action:***  Review contracts for Scandinavian Express. With a variance of 0.082, they are our most expensive partner per km.
+   - ***Target:*** Renegotiate or shift volume to Posten or Norsk Transport to capture the negative rate variance and drive down the 529 NOK cost-per-kg.
+#### 3. Route-to-Region Optimization
+   - ***Action:***  Audit the 7.7M NOK Nord-Norge corridor. Investigate if hub-and-spoke models or rail-intermodal transfers can reduce the reliance on long-haul trucking in this high-cost zone.
+#### 4. Traffic-Adaptive Routing
+   - ***Action:***  Deploy real-time traffic mitigation strategies during "Clear" weather periods to reduce the 2.6M NOK spent on "High Traffic" clear days.
+
+---
 ### **Dashboard 4: Detailed Overview**
 <img width="2645" height="1491" alt="5" src="https://github.com/user-attachments/assets/07a9ddab-2597-4877-9a11-93799a08ec42" />
 
