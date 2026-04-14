@@ -10,7 +10,7 @@ Analyzed logistics operations to identify opportunities to improve delivery reli
 6. [Data Workflow](#6-data-workflow)
 7. [Key Metrics](#7-key-metrics)
 8. [Key Insights](#8-key-insights)
-9. [Recommendations](#9-recommendations)
+9. [Executive Conclusion](#9-executive-conclusion)
 10. [Assumptions & Limitations](#10-assumptions--limitations)
 11. [Author](#11-author)
 
@@ -256,36 +256,82 @@ With a total delivery spend of 26M NOK and an average cost per kg of 529, our lo
    - ***Action:***  Deploy real-time traffic mitigation strategies during "Clear" weather periods to reduce the 2.6M NOK spent on "High Traffic" clear days.
 
 ---
-### **Dashboard 4: Detailed Overview**
+### **Sustainability & Logistics ESG Performance Report**
 <img width="2645" height="1491" alt="5" src="https://github.com/user-attachments/assets/07a9ddab-2597-4877-9a11-93799a08ec42" />
 
+### Optimizing Environmental Impact through Operational Analysis.
+
+This project analyses the intersection of logistics operations and environmental sustainability. With a total carbon footprint of 436K kg of CO2, the data highlights a critical reliance on road transport and a significant correlation between shipment priority and emission intensity. While fuel efficiency remains stable, an On-Time Delivery rate of 67.1% suggests a dual opportunity to improve service reliability while simultaneously decarbonizing the supply chain.
 
 ---
 
-## 9. Recommendations
+### Strategic Insights.
+#### 1. The "Trucking" Challenge
+  - ***Pattern:*** Trucks are the primary driver of emissions, accounting for 0.36M kg of  CO2 vastly outpacing cargo planes, ships, and rail combined.
+    
+  - ***Interpretation:*** Our environmental impact is heavily weighted on rubber-to-road logistics. Transitioning even a small percentage of long-haul truck routes to rail *the lowest emitter on our chart*could result in exponential carbon savings.
+    
+#### 2. Priority vs. Planet
+  - ***Pattern:*** *Standard* shipping accounts for 302K kg of emissions, while *Express* and *Priority* combined account for 135K kg.
+    
+  - ***Interpretation:*** While Standard delivery has the highest volume, the Express segment represents a significant portion of our footprint relative to its speed. Reducing *unnecessary urgency* in the supply chain could be our fastest lever for emission reduction.
+    
+#### 3. External Variables: Weather & Seasonality
+  - ***Pattern:*** The majority of emissions occur during Clear weather with 264K kg, likely reflecting peak operational periods.
+  - 
+  - ***Interpretation:*** Operational volume, rather than weather-related inefficiency, is our primary emission driver. However, the dip in emissions in February (138K) followed by a rebound in March (145K) suggests seasonal volatility that requires agile capacity planning to maintain efficiency.
+  - 
+#### 4. Carrier Performance Variability
+  - ***Pattern:*** There is a wide variance in package weight handled by different carriers (e.g., Posten and Bring handling the highest loads).
+    
+  - ***Interpretation:*** Not all carriers are equal. By correlating carrier-level emissions with their package weight distribution, we can identify Green Partners and renegotiate contracts with underperformers who have high carbon intensity.
 
-| Priority | Recommendation                                                                            | Based On                                                                      | Owner                       |
-| -------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | --------------------------- |
-| High     | Improve transit efficiency by addressing delays during delivery, not handling             | *Actual vs Estimated Delivery Gap*                                          | Operations                  |
-| High     | Reduce reliance on high-cost, high-emission transport (e.g., cargo planes) where feasible | *Average Delivery Cost and CO₂ Emissions by Vehicle Type*                   | Operations / Sustainability |
-| High     | Focus operational improvements on high-risk regions (e.g., Østlandet)                     | *Operational Risk Areas*                                                    | Operations                  |
-| Medium   | Optimize routing and scheduling around peak workload periods                              | *Daily Capacity & Peak Load Analysis*                                       | Operations                  |
-| Medium   | Incorporate weather and traffic conditions into planning and forecasting                  | *Impact of Weather & Traffic on Delivery Timelines*                         | Operations                  |
-| Medium   | Reassess carrier performance and reallocate volume to more efficient providers            | *Carriers by Efficiency Performance* & *High-Cost Carriers per Kilometer* | Procurement                 |
-| Low      | Monitor cost vs performance to eliminate unnecessary spending                             | *Delivery Cost vs Delay Risk*                                               | Finance / Operations        |
+---
+### Recommendations.
+Based on the dashboard findings, the following actions are proposed:
+#### 1.	Modal Shift: 
+Incentivize the shift from Road to Rail/Sea for non-urgent shipments to lower the 0.36M kg truck emission peak.
+#### 2.	on-time delivery Recovery Plan:
+Investigate why 32.9% of deliveries are late. Improving route optimization won't just help the on-time delivery metric, it will reduce wasted fuel and idling emissions.
+#### 3.	Carrier Consolidation: 
+Shift volume toward carriers demonstrating lower carbon intensity per kg of freight handled.
+#### 4.	Priority Optimization: 
+Review Express shipping defaults to ensure high-carbon transport is reserved only for truly mission-critical deliveries.
 
+---
+
+## 9. Executive Conclusion
+
+This analysis highlights that delivery performance challenges are not driven by a single issue, but by a combination of routing decisions, transport choices, and regional constraints.
+
+While the network maintains relatively fast delivery times, delays are concentrated in specific regions and conditions, particularly where traffic, weather, and high workload intersect. At the same time, cost and environmental impact are closely linked, with high-speed transport options contributing disproportionately to both.
+
+Overall, the findings suggest that improving delivery outcomes does not require a full redesign of operations, but rather targeted adjustments in how the network is managed day to day.
+
+### Direction
+
+To improve both cost efficiency and sustainability, the business should prioritize consolidating volume within Posten’s trucking network, while gradually shifting suitable express air shipments to rail where geography allows.
+
+### Closing Insight
+
+The key challenge is balancing speed, cost, and environmental impact.
+The analysis shows that by improving routing decisions, managing carrier allocation more effectively, and reducing unnecessary use of high-cost transport, the organization can achieve more consistent delivery performance while lowering both cost and emissions.
 
 ## 10. Assumptions & Limitations
 
 ### Assumptions
-- The dataset was synthetically generated but designed to reflect realistic logistics operations, including delivery volumes, routing patterns, and performance variability. 
-- Cost, vehicle type, and CO₂ emission relationships are modeled to mirror typical industry trade-offs. 
-- Weather and traffic conditions are simplified but structured to represent how external disruptions can impact delivery timelines and efficiency. 
+- The synthetic dataset was designed to reflect realistic logistics operations, including delivery volumes, routing patterns, and cost structures.
+- Delivery time, cost, and emission relationships (e.g., faster transport being more expensive and less sustainable) are assumed to follow typical industry patterns.
+- Weather and traffic conditions are simplified representations of real-world disruptions and are assumed to have a consistent impact on delivery performance.
+- Carrier performance is treated as comparable across regions, without accounting for differences in service coverage or contractual terms.
+- Route efficiency scores are assumed to be a reliable indicator of operational performance and delivery friction.
   
 ### Limitations
-- Since the data is synthetic, the findings should be interpreted as directional insights rather than exact real world measurements. 
-- The analysis covers a limited time period, so it does not capture long term trends, seasonality, or operational changes over time. 
-- Some real-world factors such as fuel price fluctuations, regulatory constraints, and unexpected disruptions are not included, which may affect cost and performance.
+- The dataset is synthetic, so findings should be interpreted as directional insights rather than exact real-world results.
+- The analysis does not include time-series depth (e.g., seasonality, long-term trends), which may influence delivery performance and cost over time.
+- External factors such as fuel price changes, labor constraints, or regulatory requirements are not included but can significantly impact logistics operations.
+- The analysis focuses on aggregated patterns and does not capture shipment-level variability or exceptions.
+- CO₂ emissions are estimated based on transport type and volume, and may not reflect precise real-world calculations.
 
 
 ## 11. Author
